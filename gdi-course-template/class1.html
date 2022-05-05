@@ -235,37 +235,44 @@
 					<h3>Local Setup in Text Editor</h3>
 					<ul>
 						<li>link your css file to your html file</li>
-					<br>
-					<p class = "fragment"><em>These exercises will work without vendor prefixes</em></p>
+						<li>When writing in CSS you can use Vendor Prefixes</li>
+							<!-- Vendor Prefix Code Example-->
+				
+							<pre>
+								<code class="css">
+	h1 {
+		-webkit-transition: all 3s ease-out;
+			transition: all 3s ease-out;
+	}
+
+	h1{	-webkit-transform: translate(-50%, -50%);
+      		-ms-transform: translate(-50%, -50%);
+			  	transform: translate(-50%, -50%);
+	}
+								</code>
+							</pre>
+						<p class = "fragment"><em>These exercises will work without vendor prefixes</em></p>
 					<small class = "fragment">For information on vendor prefixes - <a href = "https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target= "_blank">Vendor Prefixes</a>
 					</small>
 						
-		
-					</ul>
-					<br>
-					<br>
-					
-					
 				</section>
-
-					
-					
 				<!--Transitions-->
 				<section>
-					<h2>Transitions</h2>
-					<h3> Transitions require two sub properties to work:</h3>
+					<h3>Transitions</h3>
+					<p> Transitions require two sub properties to work:</p>
 						<ul class = "fragment">
-							<li class = "fragment">Transition-property</li>
-							<li class = "fragment">Transition-duration</li>
+							<code class = "fragment">Transition-property</code>
+							<br>
+							<code class = "fragment">Transition-duration</code>
 						</ul>
 					
 				</section>
-				<!--Transition- Code snippet-->
+			
 				<section>
 					<h3>Transition Property</h3>
 					<p>We name the property that we want to change.</p>
 					<!-- Slides with Code: CSS -->
-					<section>
+					
 					
 					<pre>
 						<code class="css">
@@ -287,47 +294,209 @@ button:hover{
 				
 				<!--Transition Duration-->	
 
+				<section>
+					<h3>Transition-Duration</h3>
+					<p>We set the time of the transition in seconds(s) or milliseconds(ms)</p>
+					<!-- Slides with Code: CSS -->
+			
+					<pre>
+						<code class="css">
+button {
+	background-color: green;
+	transition-property:background-color;
+	transition-duration:300ms;
+	}
+
+	button:hover{
+		background-color:orange;
+	}
+						</code>
+					</pre>
+					<small><a href = "https://codepen.io/morganejla/pen/OJzeBqe">Let's see it on Codepen</a>
+					</small>
+				</section>
+				
+				<!-- <section>
+					<h3>Transition Duration</h3> -->
+
+	
+				<section>
+					<h3>Additional Properties for Transition</h3>
+					<br/>
+					<ul>
+						<code>transition-timing-function</code>
+						<br>
+						<code>transition-delay</code>
+					</ul>
+
+					<pre>
+						<code class="css">
+button{
+	transition-timing-function:ease-in-out;
+	transition-delay:2s;
+}
+						</code>
+					</pre>
+					
+
+				</section>
+				<section>
+					<code>transition-timing-function</code>
+					<p>A CSS Property that sets a speed curve, allowing you to change the speed during the transition</p>
+					<small>
+					<a href = "https://codepen.io/morganejla/pen/BaJgEjZ" target = "_blank">Codepen timing functions</a>
+					</small>
+				</section>
+				<section>
+					<code>transition-delay</code>
+					<br>
+					<p>specifies the duration to wait before starting the transition of the property.</p>
+				</section>
+				<section>
+					<h3>Shorthand</h3>
+					<p>You can write the transition subproperties in shorthand, in this order.</p>
+					<pre>
+						<code class="css">
+button {
+	transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+}
+						</code>
+					</pre>
+				<a href = "https://codepen.io/morganejla/pen/eYywwJE" target = "_blank">Codepen.io</a>
+				</section>
+				<section>
+					<h3>Shorthand keyword: <code>all</code></h3>
+					<pre>
+						<code class="css">
+button {
+	transition: all;
+
+}
+						</code>
+					</pre>
+					
+				</section>
+
+				<!-- Hands-on Work -->
+				<section>
+					<h3>Practice</h3>
+
+					<a href = "https://codepen.io/morganejla/pen/bGLdMyp" target = "_blank">Codepen.io</a>
+				
+				</section>
+
+				<section>
+					<h3>Transitions Do Not Work on</h3>
+					<br/>
+					<ul>
+						<li class = "fragment"><code>background-images</code></li>
+						<li class = "fragment"><code>border-style</code></li>
+						<li class = "fragment"><code>font-family</code></li>
+					</ul>
+					<p class = "fragment">General rule: We can use transition on properties expressed by numbers (<code>width, height, color</code>)</p>
+				
+					
+
+				</section>
+
 				
 				<section>
-					
-
-				</section>
-				<section>
-					
-					
-
-				</section>
-				<section>
-					<h3>Setting up our Environment</h3>
+					<h4>Are we just changing timing and color? What if I want to change the shape?</h4>
 					<br/>
+					<p class = "fragment"><code>transition</code> works with a partner...</p>
 					
 
 				</section>
 				<section>
-					<h3>Setting up our Environment</h3>
-					<br/>
+					<h3>Transform</h3>
+				</section>
+				<section>
+					<p><code>transform</code> is a property that moves or changes an elements appearance.</p>
+						<ul>
+							<li>Size</li>
+							<li>Position</li>
+							<li>Shape</li>
+						</ul>
+						<br>
+						<br>
+					<small>
+					<a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target = "_blank">MDN web docs - transform</a>
+					</small>
+				</section>
+				<!--Hands-on Work-->
+				<section>
+					<h4>How it Works</h4>
+					<p>The <code>transform</code> property uses keywords:</p>
+						<ul>
+							<li><code>scale</code></li>
+							<li><code>translate</code></li>
+							<li><code>rotate</code></li>
+							<li><code>skew</code></li>
+						</ul>
+				
+				<div>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/eYyqOMz?editors=1100" target = "_blank">Transform in action - Codepen.io</a>
+					</small>
+				</div>
+				</section>
+				<section>
+					<p><code>transform</code> relies on the (x,y) axis for 2D animation.</p>
+					<div>
+						<small>
+							<a href = "https://codepen.io/morganejla/pen/eYyqOMz?editors=1100" target = "_blank">Transform in action - Codepen.io</a>
+						</small>
+						<br>
+						<small>
+							<a href = "https://css-tricks.com/almanac/properties/t/transform/" target = "_blank">CSS-tricks | transform </a>
+						</small>
+					</div>
+				</section>
+				<section>
+					<p><code>transform-origin</code></p>
+					<ul>
+						<li><code>transform-origin: </code>separate from the <code>transform</code> property.</li>
+						<li>specifies the origin point of the transform.</li>
+						<li>apply it to the parent element.</li>
+						<li>default for rotating is the center.</li>
+					</ul>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/bGaXrZK" target= "_blank">transform-origin | Codepen.io</a>
+					</small>
 					
+					
+				</section>
+				<section>
+					<h3>Translate</h3>
+						<p><code>translate</code></p>
+						<p>Moves an element from it's current position.</p>
+						<small>
+							<a href = "https://www.w3schools.com/css/tryit.asp?filename=trycss3_transform_translate">W3 Schools CSS Translate example</a>
+						</small>
+				</section>
+				<section>
+					<h3>Something to remember with <code>translate</code></h3>
+						<ul>
+							<li>positive values move elements right and down.</li>
+							<li>negative values move elements left and up.</li>
+							
+						</ul>
 
 				</section>
 				<section>
-					<h3>Setting up our Environment</h3>
-					<br/>
-					
-
+					<h3>Pseudo classes &amp; Pseudo elements</h3>
+					<p>pseudo classes refer to </p>
+					<pre>
+						<code class="css">
+button {
+	transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+}
+						</code>
+					</pre>
+				<!-- Insert exercise to work on --Creative Button -->
+				<!-- Address the use of the pseudo element and how it is different from class -->
+				<!-- Insert MDN doc to support definitions -->
 				</section>
-				<section>
-					<h3>Setting up our Environment</h3>
-					<br/>
-					
-
-				</section>
-				<section>
-					<h3>Setting up our Environment</h3>
-					<br/>
-					
-
-				</section>
-
 			
 
 				<!-- Hands-on Work -->
