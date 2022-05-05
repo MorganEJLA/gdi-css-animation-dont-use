@@ -697,6 +697,8 @@ button:hover{
 		}
 								</code>
 							</pre>
+						<small><a href = "https://codepen.io/morganejla/pen/gOvaWrO" target="_blank">animation-demo | codepen.io</a>
+						</small>
 				</section>
 				<section>
 					<h3>@keyframes</h3>
@@ -706,12 +708,14 @@ button:hover{
 
 				</section>
 				<section>
-					<h3>@keyframe values</h3>
+					<h3>@keyframe keywords</h3>
 						<p>keywords we use to determine the steps in the @keyframe</p>
 							<ul>
 								<li><code>from</code> &amp; <code>to</code></li>
-								<li>percentages</li>
-								<li>pixels</li>
+								<li><code>percentages</code></li>
+								<li><code>px</code></li>
+								<li><code>transform: </code></li>
+								<li><code>translate()</code></li>
 							</ul>
 							<pre>
 								<code class="css">
@@ -731,11 +735,56 @@ button:hover{
 					</small>
 
 				</section>
-
+				<section>
+					<h3>additional animation properties</h3>
+						<ul>
+							<li class = "fragment"><code>animation-timing-function</code></li>
+							<li class = "fragment"><code>animation-delay</code></li>
+							<li class = "fragment"><code>animation-iteration-count</code></li>
+							<li class = "fragment"><code>animation-direction</code></li>
+							<li class = "fragment"><code>animation-fill-mode</code></li>
+							<li class = "fragment"><code>animation-play-state</code></li>
+						</ul>
+						<br>
+						<br>
+						<small class = "fragment">
+							<a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/animation" target="_blank">mdn doc | animation properties</a>
+						</small>
+				</section>
+				<section>
+					<h3>animation shorthand</h3>
+					<pre>
+						<code class="css">
+div {
+  animation: |animation-name|animation-duration| animation-timing-function| animation-delay| animation-iteration-count | animation-direction | animation-fill-mode| animation-play-state;
+}
+div{
+	animation: name 20s ease-in 1.5s 3 reverse running;
+}
+						</code>
+					</pre>
+						<small class = "fragment">
+							<a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/animation" target="_blank">mdn doc | animation properties</a>
+						</small>
+				</section>
+				<section>
+					<h3>animation fill-mode</h3>
+					<p><code>animation-fill-mode</code>  keeps the element at the position where the animation ends.</p>
+				
+						<small>
+							<a href = "https://codepen.io/morganejla/pen/NWXQvzY" target="_blank">mdn doc | animation properties</a>
+						</small>
+				</section>
+				<section>
+					<h3>Practice</h3>
+						<small>
+							<a href = "https://codepen.io/morganejla/pen/NWXQvzY" target = "_blank">animation-fill-mode | codepen.io</a>
+						</small>
+				</section>
 				<!-- Hands-on Work -->
 				<section>
 					<h2>Let's Develop It!</h2>
-					<p>Instructions...</p>
+					<p>changing a background animation</p>
 				</section>
 
 				<!-- Course Conclusion -->
