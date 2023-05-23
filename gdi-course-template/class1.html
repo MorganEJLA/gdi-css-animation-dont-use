@@ -446,7 +446,7 @@ button:hover{
 
 				
 				<section>
-					<h4>Are we just changing timing and color? What if I want to change the shape?</h4>
+					<h4>Are we just changing timing and color? What if I want to change the shape? What if I want to change the shape or its position?</h4>
 					<br/>
 					<p class = "fragment"><code>transition</code> works with a partner...</p>
 					
@@ -486,8 +486,20 @@ button:hover{
 					</small>
 				</div>
 				</section>
+				<!--Accessibility-->
 				<section>
-					<p><code>transform</code> relies on the (x,y) axis for 2D animation.</p>
+					<h3>Transforms &amp; Accessibility</h3>
+						<div>
+						  <img src="assets/imgs/stock-img/accessibility-scale.png" alt="accesibility-screenshot-mdn docs">
+						</div>
+						
+						<small>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target="_blank">mdn docs | transform-accessibility-concerns</a>
+						</small>
+				</section>
+				<section>
+					<!-- Transform functions & definitions -->
+					<p><code>transform</code>functions rely on the (x,y) axis for 2D animation.</p>
 					<div>
 						<small>
 							<a href = "https://codepen.io/morganejla/pen/eYyqOMz?editors=1100" target = "_blank">Transform in action - Codepen.io</a>
@@ -498,6 +510,129 @@ button:hover{
 						</small>
 					</div>
 				</section>
+				<!-- Transform-function scale() -->
+				<section>
+					<p><code>scale()</code></p>
+					<p>defines a transformation that resizes an element on the 2D plane</p>
+
+					<pre>
+						<code class="css">
+div {
+	width:100px;
+	height:100px;
+	transform: scale(0);
+/*When the scale is zero, we don't see the element at all.*/
+}
+
+div {
+	width:100px;
+	height:100px;
+ 	transform: scale(1);
+/* When the scale is one, the element stays in place. */
+
+}
+div{
+	width:100px;
+	height:100px;
+	transform:scale(2);
+/* When the scale is 2 the element doubles in size. */
+/* it is now 200px wide and tall */
+}
+						</code>
+					</pre>
+					<small><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale" target="_blank">mdn docs | transform-function : scale()</a></small>
+					<br>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/eYPbxxG" target = "_blank">codepen.io | scale demo</a>
+					</small>
+				</section>
+				<section>
+					<p><code>translate</code></p>
+					<p>repositions an element in horizontal or vertical directions.</p>
+					<small>values are in length or percentage</small>
+
+					<pre>
+						<code class="css">
+div {
+ transform: translate(42px, 35px);
+}
+						</code>
+					</pre>
+					<small><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate" target="_blank">mdn docs | transform-function : translate()</a></small>
+					<br>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/eYyqOMz?editors=1100" target = "_blank"> codepen.io | transform demo</a>
+					</small>
+				</section>
+				<section>
+					<p>According to mdn, it is characterized by two-dimensional vector. Its coordinates define how much the element moves in each direction.</p>
+					<pre>
+						<code class="css">
+/* Single <length-percentage> values */
+	transform: translate(200px);
+	transform: translate(50%);
+	
+	/* Double <length-percentage> values */
+	transform: translate(100px, 200px);
+	transform: translate(100px, 50%);
+	transform: translate(30%, 200px);
+	transform: translate(30%, 50%);
+	
+						</code>
+					</pre>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/OJBdpwE" target = "_blank"> codepen.io | translate demo</a>
+					</small>
+
+				</section>
+				<section>
+					<p><code>rotate()</code></p>
+					<p>rotates an element on a fixed point.</p>
+					<p class = "fragments"> values are set in degrees </p>
+					<p>the default fixed point is also known as the transform-origin</p>
+					<p class = "fragments">We will discuss transform origins shortly!</p>
+					<small>
+						Other values used are turns and radians. we will be focusing on degrees.
+					</small>
+
+					<pre>
+						<code class="css">
+div {
+ transform: rotate(90deg);
+}
+						</code>
+					</pre>
+					<small><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="_blank">mdn docs | transform-function : rotate()</a></small>
+					<br>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/eYyqOMz?editors=1100" target = "_blank">codepen.io | rotate demo</a>
+					</small>
+				</section>
+				<section>
+					<p>A note about combining rotate and another transform</p>
+					<p class = "fragments">Pay attention to the order you are applying the transforms.</p>
+					<small>
+						<a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate#combining_rotation_with_another_transformation" target = "_blank">mdn web docs | Combining Rotation and another transform </a>
+					</small>
+				</section>
+				<section>
+					<p><code>skew()</code></p>
+					<p>skews an element on the 2D plane.</p>
+				
+					<pre>
+						<code class="css">
+div {
+ transform: skew(90deg);
+}
+					</code>
+					</pre>
+					<small><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="_blank">mdn docs | transform-function : skew()</a></small>
+					<br>
+					<small>
+						<a href = "https://codepen.io/morganejla/pen/eYyqOMz?editors=1100" target = "_blank">codepen.io | skew demo</a>
+					</small>
+				</section>
+
 				<section>
 					<p><code>transform-origin</code></p>
 					<ul>
@@ -537,10 +672,19 @@ button:hover{
 					<p><em> pseudo-elements </em> let you style a part of a selected element.
 						<pre>
 							<code class="css">
-	p::first-line {
-		color: blue;
-		text-transform: uppercase;
-		}
+a::before{
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	background-color:#fe6437;
+	height:100%;
+	width:100%;
+	z-index:-1;
+	transform-origin:top left; 
+	transform:rotate(-90deg);
+	transition:transform 1s;
+	}
 							</code>
 						</pre>
 						<small>
@@ -558,7 +702,10 @@ button:hover{
 						
 							<p>Using :: helps us differentiate between elements &amp; classes.</p>
 				</section>
-					
+				<section>
+					<h3>Pseudo-classes and Pseudo-elements in the wild</h3>
+					<p>Let's look at an example of where pseudo-classes and pseudo-elements are used together </p>
+				</section>		
 				<section>
 					<!--Hand-on-work-->
 					<h2>Let's Develop It!</h2>
